@@ -29,19 +29,16 @@ class thread() :Thread(){
         //Write Thread
 
 
-        synchronized(this){
-            var count=0
-            while (count<10){
-                println(this.ThreadName+" Count:$count")
-                count++
+        var count=0
+        while (count<10){
+            println(this.ThreadName+" Count:$count")
+            count++
 
-                try {
-                    Thread.sleep(1000)
-                }catch (ex:Exception){
-                    print(ex.message)
-                }
+            try {
+                Thread.sleep(1000)
+            }catch (ex:Exception){
+                print(ex.message)
             }
-
         }
     }
 
