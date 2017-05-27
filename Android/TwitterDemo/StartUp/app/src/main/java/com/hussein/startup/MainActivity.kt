@@ -69,10 +69,10 @@ class MainActivity : AppCompatActivity() {
 
             var mytweet=listNotesAdpater[p0]
 
-            if(mytweet.tweetPersonUID.equals("add")){
-                var myView=layoutInflater.inflate(R.layout.add_ticket,null)
+            if(mytweet.tweetPersonUID.equals("add")) {
+                var myView = layoutInflater.inflate(R.layout.add_ticket, null)
 
-                myView.iv_attach.setOnClickListener( View.OnClickListener {
+                myView.iv_attach.setOnClickListener(View.OnClickListener {
                     loadImage()
 
                 })
@@ -81,11 +81,14 @@ class MainActivity : AppCompatActivity() {
                     //upload server
 
                     myRef.child("posts").push().setValue(
-                            PostInfo( UserUID!! ,
-                             myView.etPost.text.toString() ,  DownloadURL!! ))
+                            PostInfo(UserUID!!,
+                                    myView.etPost.text.toString(), DownloadURL!!))
 
                     myView.etPost.setText("")
                 })
+                return myView
+            } else if(mytweet.tweetPersonUID.equals("loading")){
+                var myView=layoutInflater.inflate(R.layout.loading_ticket,null)
                 return myView
             }else{
                 var myView=layoutInflater.inflate(R.layout.tweets_ticket,null)
@@ -182,7 +185,8 @@ class MainActivity : AppCompatActivity() {
 
     var DownloadURL:String?=""
     fun UploadImage(bitmap:Bitmap){
-
+        ListTweets.add(0,Ticket("0","him","url","loading"))
+        adpater!!.notifyDataSetChanged()
 
         val storage= FirebaseStorage.getInstance()
         val storgaRef=storage.getReferenceFromUrl("gs://gameudemy.appspot.com")
@@ -199,7 +203,8 @@ class MainActivity : AppCompatActivity() {
         }.addOnSuccessListener { taskSnapshot ->
 
             DownloadURL= taskSnapshot.downloadUrl!!.toString()
-
+            ListTweets.removeAt(0)
+            adpater!!.notifyDataSetChanged()
 
         }
     }
