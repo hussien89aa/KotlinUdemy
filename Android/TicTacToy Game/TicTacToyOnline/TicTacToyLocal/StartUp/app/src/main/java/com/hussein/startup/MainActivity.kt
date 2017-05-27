@@ -202,6 +202,7 @@ class MainActivity : android.support.v7.app.AppCompatActivity() {
 
         PlayerOnline(SplitString(userDemail)+SplitString(myEmail!!)) //husseinjena
         PlayerSymbol="O"
+     
     }
 
 var sessionID:String?=null
