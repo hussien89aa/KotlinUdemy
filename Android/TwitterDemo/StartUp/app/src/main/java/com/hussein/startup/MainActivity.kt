@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 return myView
             }else{
                 var myView=layoutInflater.inflate(R.layout.tweets_ticket,null)
-                myView.txt_tweet.setText(mytweet.tweetText)
+                myView.txt_tweet.text = mytweet.tweetText
 
                 //myView.tweet_picture.setImageURI(mytweet.tweetImageURL)
                 Picasso.with(context).load(mytweet.tweetImageURL).into(myView.tweet_picture)
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                                         if(key.equals("ProfileImage")){
                                             Picasso.with(context).load(userInfo).into(myView.picture_path)
                                         }else{
-                                            myView.txtUserName.setText(userInfo)
+                                            myView.txtUserName.text = userInfo
                                         }
 
 
