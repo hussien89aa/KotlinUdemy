@@ -248,6 +248,8 @@ fun PlayerOnline(sessionID:String){
 }
 
 
+
+    var number=0
     fun IncommingCalls(){
         myRef.child("Users").child(SplitString(myEmail!!)).child("Request")
                 .addValueEventListener(object:ValueEventListener{
@@ -265,6 +267,9 @@ fun PlayerOnline(sessionID:String){
                                     value= td[key] as String
                                     etEmail.setText(value)
 
+                                    val notifyme=Notifications()
+                                    notifyme.Notify(applicationContext,value + " want to play tic tac toy",number)
+                                    number++
                                     myRef.child("Users").child(SplitString(myEmail!!)).child("Request").setValue(true)
 
                                     break

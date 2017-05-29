@@ -10,11 +10,15 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.ByteArrayOutputStream
@@ -29,8 +33,6 @@ class Login : AppCompatActivity() {
     private var database=FirebaseDatabase.getInstance()
     private var myRef=database.reference
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -40,7 +42,7 @@ class Login : AppCompatActivity() {
             checkPermission()
         })
 
-
+        FirebaseMessaging.getInstance().subscribeToTopic("news")
 
     }
 

@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -26,6 +27,9 @@ import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
+import com.google.android.gms.ads.AdView
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -89,6 +93,13 @@ class MainActivity : AppCompatActivity() {
                 return myView
             } else if(mytweet.tweetPersonUID.equals("loading")){
                 var myView=layoutInflater.inflate(R.layout.loading_ticket,null)
+                return myView
+            } else if(mytweet.tweetPersonUID.equals("ads")){
+                var myView=layoutInflater.inflate(R.layout.ads_ticket,null)
+
+                var mAdView = myView.findViewById(R.id.adView) as AdView
+                val adRequest = AdRequest.Builder().build()
+                mAdView.loadAd(adRequest)
                 return myView
             }else{
                 var myView=layoutInflater.inflate(R.layout.tweets_ticket,null)
@@ -228,6 +239,7 @@ fun LoadPost(){
 
                         ListTweets.clear()
                         ListTweets.add(Ticket("0","him","url","add"))
+                        ListTweets.add(Ticket("0","him","url","ads"))
                         var td= dataSnapshot!!.value as HashMap<String,Any>
 
                         for(key in td.keys){

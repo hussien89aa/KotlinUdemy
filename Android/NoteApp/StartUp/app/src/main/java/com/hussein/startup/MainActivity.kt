@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
        // listNotes.add(Note(3," meet friend","Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
 
 
-
+Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
 
         //Load from DB
 
@@ -44,7 +44,37 @@ class MainActivity : AppCompatActivity() {
     override  fun onResume() {
         super.onResume()
         LoadQuery("%")
+        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this,"onStart",Toast.LENGTH_LONG).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        Toast.makeText(this,"onPause",Toast.LENGTH_LONG).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Toast.makeText(this,"onStop",Toast.LENGTH_LONG).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Toast.makeText(this,"onDestroy",Toast.LENGTH_LONG).show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this,"onRestart",Toast.LENGTH_LONG).show()
+    }
+
 
     fun LoadQuery(title:String){
 

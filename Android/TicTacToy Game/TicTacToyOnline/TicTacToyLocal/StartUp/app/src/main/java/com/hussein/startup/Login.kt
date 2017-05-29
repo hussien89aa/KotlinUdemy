@@ -76,6 +76,7 @@ class Login : AppCompatActivity() {
             intent.putExtra("uid", currentUser.uid)
 
             startActivity(intent)
+            finish()
         }
     }
 
