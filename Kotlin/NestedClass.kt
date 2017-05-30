@@ -16,8 +16,8 @@ class Outer {
 fun  main(args:Array<String>){
 
    var outer=Outer()
-    var nested=Outer.Nested()
-    nested.Show()
+    //var nested=Outer.Nested()
+   // nested.Show()
 
 
 }
