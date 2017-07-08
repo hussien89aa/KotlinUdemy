@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
                 var myView = inflator.inflate(R.layout.animal_killer_ticket, null)
                 myView.tvDes.text = animal.name!!
-                myView.tvDes.text = animal.des!!
+                myView.tvName.text = animal.des!!
                 myView.ivAnimalImage.setImageResource(animal.image!!)
                 myView.ivAnimalImage.setOnClickListener {
 

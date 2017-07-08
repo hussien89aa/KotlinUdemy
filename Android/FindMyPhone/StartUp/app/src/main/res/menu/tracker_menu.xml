@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/addContact"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="Add"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/finishActivity"
+        android:icon="@drawable/ic_done_white_24dp"
+        android:title="Finish"
+        app:showAsAction="always" />
+</menu>

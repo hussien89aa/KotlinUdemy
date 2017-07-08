@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/help"
+        android:icon="@drawable/ic_local_hospital_white_24dp"
+        android:title="Help"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/addTracker"
+        android:icon="@drawable/ic_perm_identity_white_24dp"
+        android:title="Add"
+        app:showAsAction="always" />
+</menu>
