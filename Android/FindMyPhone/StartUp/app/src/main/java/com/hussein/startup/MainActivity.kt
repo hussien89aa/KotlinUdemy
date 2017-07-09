@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    var IsAccesLocation=false
+
     override fun onResume() {
         super.onResume()
 
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
         refreshUsers()
 
-        if (IsAccesLocation) return
+        if (MyService.isServiceRunning) return // Donot run again
         checkContactPermission()
         checkLocationPermission()
 
@@ -228,16 +228,18 @@ class MainActivity : AppCompatActivity() {
     var listOfContacts=HashMap<String,String>()
     fun loadContact() {
 
-        listOfContacts.clear()
+        try{
+            listOfContacts.clear()
 
-        val cursor=contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null)
-        cursor.moveToFirst()
-        do {
-            val name=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
-            val phoneNumber=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+            val cursor=contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null)
+            cursor.moveToFirst()
+            do {
+                val name=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                val phoneNumber=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
 
-            listOfContacts.put(UserData.formatPhoneNumber(phoneNumber),name)
-        }while (cursor.moveToNext())
+                listOfContacts.put(UserData.formatPhoneNumber(phoneNumber),name)
+            }while (cursor.moveToNext())
+        }catch (ex:Exception){}
     }
 
 
@@ -259,60 +261,13 @@ class MainActivity : AppCompatActivity() {
 
     fun getUserLocation(){
 
-        var myLocation= MyLocationListener()
-        val locationManager=getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,3,3f,myLocation)
 
-  //listsent to request
-      var userData= UserData(this)
-        val myPhoneNumber=userData.loadPhoneNumber()
-        databaseRef!!.child("Users").child(myPhoneNumber).child("request").addValueEventListener(
-                object :ValueEventListener {
-                    override fun onDataChange(p0: DataSnapshot?) {
-
-                        if (MainActivity.myLocation==null) return
-                        // get datatime
-                        val df = SimpleDateFormat("yyyy/MMM/dd HH:MM:ss")
-                        val date = Date()
-                        databaseRef!!.child("Users").child(myPhoneNumber)
-                                .child("location").child("lat").setValue(MainActivity.myLocation!!.latitude)
-                        databaseRef!!.child("Users").child(myPhoneNumber)
-                                .child("location").child("log").setValue( MainActivity.myLocation!!.longitude)
-                        databaseRef!!.child("Users").child(myPhoneNumber)
-                                .child("location").child("lastOnline").setValue( df.format(date).toString())
-                    }
-
-                    override fun onCancelled(p0: DatabaseError?) {
-
-                    }
-                }
-        )
-
-    }
-    companion object{
-        var myLocation:Location?=null
-    }
-
-    inner class MyLocationListener:LocationListener {
-        constructor():super(){
-            IsAccesLocation=true
-            myLocation= Location("me")
-            myLocation!!.longitude =0.0
-            myLocation!!.latitude=0.0
+        // Start service
+        if(!MyService.isServiceRunning){
+            val intent= Intent(baseContext,MyService::class.java)
+            startService(intent)
         }
 
-        override fun onLocationChanged(location: Location?) {
-            myLocation=location
-         }
-
-        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
-          }
-
-        override fun onProviderEnabled(p0: String?) {
-         }
-
-        override fun onProviderDisabled(p0: String?) {
-         }
-
     }
+
 }
