@@ -22,13 +22,19 @@ class  UserData{
     fun loadPhoneNumber():String{
 
         val phoneNumber =sharedRef!!.getString("phoneNumber","empty")
+        return  phoneNumber
+    }
+
+    fun isFirstTimeLoad(){
+
+        val phoneNumber =sharedRef!!.getString("phoneNumber","empty")
         if ( phoneNumber.equals("empty")){
             val intent =Intent(context,Login::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context!!.startActivity(intent)
         }
 
-        return  phoneNumber
+
     }
 
     fun saveContactInfo(){
