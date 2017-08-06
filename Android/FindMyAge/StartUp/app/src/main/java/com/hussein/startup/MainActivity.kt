@@ -8,7 +8,7 @@ import  kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,18 +18,23 @@ class MainActivity : AppCompatActivity() {
         buGetAge.setOnClickListener( View.OnClickListener {
 
 
-        })
+        }
         */
     }
 
 
- protected fun  BuClickEvent(view:View){
+  fun  BuClickEvent(view:View){
 
      // fire click button
      val userDOB:String=etDOB.text.toString()
+      if (userDOB.toInt()==0){
+          tvShowAge.text=" invalid input"
+          return
+      }
      val year:Int=Calendar.getInstance().get(Calendar.YEAR)
      val myAge=year - userDOB.toInt()
-     tvShowAge.setText("Your age is "+ myAge)
+      val avg =  myAge/userDOB.toInt()
+      tvShowAge.text = "Your age is "+ myAge
  }
 
 }

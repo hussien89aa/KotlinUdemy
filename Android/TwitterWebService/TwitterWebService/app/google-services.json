@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "173695667648",
+    "firebase_url": "https://twitterwebservice-b75b6.firebaseio.com",
+    "project_id": "twitterwebservice-b75b6",
+    "storage_bucket": "twitterwebservice-b75b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173695667648:android:1dadb0efd9fd92fc",
+        "android_client_info": {
+          "package_name": "com.alrubaye.twitterwebservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173695667648-pjrrah6otcqa55sp9g5megfp5oq9dsv6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alrubaye.twitterwebservice",
+            "certificate_hash": "76a07b52241638f10fb6d3cf8f6b855f929169dc"
+          }
+        },
+        {
+          "client_id": "173695667648-bjgrbpm61d4oqsrqmmrv5ds2b3e0jtfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0kb_gzya1ywnyRo73DB6UDLNGZUx7j00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173695667648-bjgrbpm61d4oqsrqmmrv5ds2b3e0jtfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173695667648:android:743ba6586e2f9d5c",
+        "android_client_info": {
+          "package_name": "com.alrubaye.twitterwebservicehussein"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173695667648-krqdt6dh34910761jqp44fgrafsvb4qv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alrubaye.twitterwebservicehussein",
+            "certificate_hash": "76a07b52241638f10fb6d3cf8f6b855f929169dc"
+          }
+        },
+        {
+          "client_id": "173695667648-bjgrbpm61d4oqsrqmmrv5ds2b3e0jtfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0kb_gzya1ywnyRo73DB6UDLNGZUx7j00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173695667648-bjgrbpm61d4oqsrqmmrv5ds2b3e0jtfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

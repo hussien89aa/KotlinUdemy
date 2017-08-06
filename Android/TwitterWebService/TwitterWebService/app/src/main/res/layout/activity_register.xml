@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.alrubaye.twitterwebservice.Register">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter your name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:layout_marginBottom="10pt"
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_marginBottom="10pt"
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter your password"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="80pt"
+        android:layout_height="100pt"
+        app:srcCompat="@drawable/persoicon" />
+
+    <Button
+        android:id="@+id/buRegister"
+        android:layout_width="50pt"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bu_color"
+        android:onClick="buRegisterEvent"
+        android:text="Register" />
+</LinearLayout>
