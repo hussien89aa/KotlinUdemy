@@ -128,9 +128,26 @@ class MainActivity : AppCompatActivity() {
 
             if (winer==1){
                 Toast.makeText(this," Player 1  win the game", Toast.LENGTH_LONG).show()
+                dog1.isEnabled=false // to disable all buttons if some one win
+                dog2.isEnabled=false
+                dog3.isEnabled=false
+                dog4.isEnabled=false
+                dog5.isEnabled=false
+                dog6.isEnabled=false
+                dog7.isEnabled=false
+                dog8.isEnabled=false
+                dog9.isEnabled=false
             }else{
                 Toast.makeText(this," Player 2  win the game", Toast.LENGTH_LONG).show()
-
+                dog1.isEnabled=false // to disable all buttons if some one win 
+                dog2.isEnabled=false
+                dog3.isEnabled=false
+                dog4.isEnabled=false
+                dog5.isEnabled=false
+                dog6.isEnabled=false
+                dog7.isEnabled=false
+                dog8.isEnabled=false
+                dog9.isEnabled=false
             }
 
         }
