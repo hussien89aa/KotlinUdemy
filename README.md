@@ -1,4 +1,4 @@
-## S napped code for The complete Kotlin Developer course  PlayList in Udemy, check the videos Tutorial  [here](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB)
+## Snapped code for The complete Kotlin Developer course  PlayList in Udemy, check the videos Tutorial  [here](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB)
 
 ## In this course you will learn
 Learn how to make online games, and apps for Android O, like Pokémon , twitter,Tic Tac Toe, and notepad using Kotlin
