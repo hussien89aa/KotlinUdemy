@@ -16,7 +16,7 @@ fun show(numberD:Double):Unit{
 
 fun main(args:Array<String>){
 
-    show("hssein")
+    show("Hussein")
 
     show(100)
 
