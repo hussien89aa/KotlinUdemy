@@ -9,7 +9,6 @@ import com.hussein.startup.R
 import kotlinx.android.synthetic.main.activity_add_notes.*
 
 class AddNotes : AppCompatActivity() {
-    val dbTable="Notes"
  var id=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
