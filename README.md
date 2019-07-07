@@ -1,6 +1,8 @@
-## Complete source code of 17 Android Apps  that we build in "The complete Android Kotlin Developer course". Enroll using a [ 95% discount coupon](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
+## The complete Android Kotlin Developer course 
 
-### In this course you will learn how to make online games, and apps for Android, using Kotlin. Bellow is list of open source Apps that we build in tutorial. 
+### In this course you will learn how to make 17 online games, and apps for Android, using Kotlin. Enroll using a [ 95% discount coupon](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
+
+Bellow is list of open source Apps that we build in tutorial
 
 - [Find My Age  App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FindMyAge).
 - [Tic Tac Toe Local App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TicTacToy%20Game/TicTacToyLocal).
