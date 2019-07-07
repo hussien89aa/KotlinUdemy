@@ -7,10 +7,10 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.os.AsyncTask
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -109,11 +109,11 @@ class Register : AppCompatActivity() {
 
             val selectedImage=data.data
             val filePathColum= arrayOf(MediaStore.Images.Media.DATA)
-            val cursor= contentResolver.query(selectedImage,filePathColum,null,null,null)
-            cursor.moveToFirst()
-            val coulomIndex=cursor.getColumnIndex(filePathColum[0])
-            val picturePath=cursor.getString(coulomIndex)
-            cursor.close()
+            val cursor= contentResolver.query(selectedImage!!,filePathColum,null,null,null)
+            cursor!!.moveToFirst()
+            val coulomIndex=cursor!!.getColumnIndex(filePathColum[0])
+            val picturePath=cursor!!.getString(coulomIndex)
+            cursor!!.close()
             ivUserImage.setImageBitmap(BitmapFactory.decodeFile(picturePath))
         }
 
@@ -141,7 +141,7 @@ class Register : AppCompatActivity() {
             Toast.makeText(applicationContext,"fail to upload",Toast.LENGTH_LONG).show()
         }.addOnSuccessListener { taskSnapshot ->
 
-            var DownloadURL= taskSnapshot.downloadUrl!!.toString()
+            var DownloadURL= taskSnapshot.storage.downloadUrl.toString()!!
 
              // TODO: register to datavase
 

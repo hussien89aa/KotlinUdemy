@@ -6,7 +6,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
@@ -197,11 +197,11 @@ class MainActivity : AppCompatActivity() {
 
             val selectedImage=data.data
             val filePathColum= arrayOf(MediaStore.Images.Media.DATA)
-            val cursor= contentResolver.query(selectedImage,filePathColum,null,null,null)
-            cursor.moveToFirst()
-            val coulomIndex=cursor.getColumnIndex(filePathColum[0])
-            val picturePath=cursor.getString(coulomIndex)
-            cursor.close()
+            val cursor= contentResolver.query(selectedImage!!,filePathColum,null,null,null)
+            cursor!!.moveToFirst()
+            val coulomIndex=cursor!!.getColumnIndex(filePathColum[0])
+            val picturePath=cursor!!.getString(coulomIndex)
+            cursor!!.close()
             UploadImage(BitmapFactory.decodeFile(picturePath))
         }
 
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,"fail to upload", Toast.LENGTH_LONG).show()
         }.addOnSuccessListener { taskSnapshot ->
 
-            DownloadURL= taskSnapshot.downloadUrl!!.toString()
+            DownloadURL= taskSnapshot.storage.downloadUrl.toString()
             ListTweets.removeAt(0)
             adpater!!.notifyDataSetChanged()
 

@@ -23,7 +23,7 @@ class SaveSettings{
     }
 
     fun loadSettings(){
-        userID= sharedRef!!.getString("userID","0")
+        userID= sharedRef!!.getString("userID","0").toString()
 
         if (userID=="0"){
             val intent=Intent(context,Login::class.java)
