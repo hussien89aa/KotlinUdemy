@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.net.Uri
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.NotificationCompat
 import android.util.Log
 
 
@@ -40,8 +40,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         // Check if message contains a notification payload.
         if (remoteMessage.notification != null) {
-            Log.d(TAG, "Message Notification Body: " + remoteMessage.notification.body!!)
-            sendNotification(remoteMessage.notification.body!!)
+            Log.d(TAG, "Message Notification Body: " + remoteMessage.notification!!.body!!)
+            sendNotification(remoteMessage.notification!!.body!!)
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM

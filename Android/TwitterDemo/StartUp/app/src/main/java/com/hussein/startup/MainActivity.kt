@@ -5,7 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var b:Bundle=intent.extras
+        var b:Bundle=intent.extras!!
         myemail=b.getString("email")
         UserUID=b.getString("uid")
         //Dummy data
@@ -109,10 +109,10 @@ class MainActivity : AppCompatActivity() {
                 Picasso.with(context).load(mytweet.tweetImageURL).into(myView.tweet_picture)
 
 
-                myRef.child("Users").child(mytweet.tweetPersonUID)
+                myRef.child("Users").child(mytweet.tweetPersonUID!!)
                         .addValueEventListener(object :ValueEventListener{
 
-                            override fun onDataChange(dataSnapshot: DataSnapshot?) {
+                            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                                 try {
 
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
                             }
 
-                            override fun onCancelled(p0: DatabaseError?) {
+                            override fun onCancelled(p0: DatabaseError) {
 
                             }
                         })
@@ -184,11 +184,11 @@ class MainActivity : AppCompatActivity() {
 
             val selectedImage=data.data
             val filePathColum= arrayOf(MediaStore.Images.Media.DATA)
-            val cursor= contentResolver.query(selectedImage,filePathColum,null,null,null)
-            cursor.moveToFirst()
-            val coulomIndex=cursor.getColumnIndex(filePathColum[0])
-            val picturePath=cursor.getString(coulomIndex)
-            cursor.close()
+            val cursor= contentResolver.query(selectedImage!!,filePathColum,null,null,null)
+            cursor!!.moveToFirst()
+            val coulomIndex=cursor!!.getColumnIndex(filePathColum[0])
+            val picturePath=cursor!!.getString(coulomIndex)
+            cursor!!.close()
             UploadImage(BitmapFactory.decodeFile(picturePath))
         }
 
@@ -213,7 +213,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,"fail to upload", Toast.LENGTH_LONG).show()
         }.addOnSuccessListener { taskSnapshot ->
 
-            DownloadURL= taskSnapshot.downloadUrl!!.toString()
+            DownloadURL= taskSnapshot.storage.downloadUrl.toString()!!
             ListTweets.removeAt(0)
             adpater!!.notifyDataSetChanged()
 
@@ -233,7 +233,7 @@ fun LoadPost(){
     myRef.child("posts")
             .addValueEventListener(object :ValueEventListener{
 
-                override fun onDataChange(dataSnapshot: DataSnapshot?) {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                     try {
 
@@ -262,7 +262,7 @@ fun LoadPost(){
 
                 }
 
-                override fun onCancelled(p0: DatabaseError?) {
+                override fun onCancelled(p0: DatabaseError) {
 
                 }
             })
