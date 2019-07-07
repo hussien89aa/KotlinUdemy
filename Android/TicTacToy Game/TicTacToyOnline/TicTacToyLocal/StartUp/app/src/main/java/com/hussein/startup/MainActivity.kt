@@ -2,7 +2,7 @@ package com.hussein.startup
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import com.hussein.startup.R
 import kotlin.collections.HashMap
 
-class MainActivity : android.support.v7.app.AppCompatActivity() {
+class MainActivity : androidx.appcompat.app.AppCompatActivity() {
 
     //database instance
     private var database= FirebaseDatabase.getInstance()
@@ -26,36 +26,36 @@ class MainActivity : android.support.v7.app.AppCompatActivity() {
 
     var myEmail:String?=null
 
-  private var mFirebaseAnalytics: com.google.firebase.analytics.FirebaseAnalytics?=null
-    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+  private var mFirebaseAnalytics: FirebaseAnalytics?=null
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.hussein.startup.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         mFirebaseAnalytics= FirebaseAnalytics.getInstance(this)
 
-        var b:Bundle=intent.extras
+        var b:Bundle=intent.extras!!
         myEmail=b.getString("email")
         IncommingCalls()
     }
 
 
-    protected  fun buClick(view: android.view.View){
-        val buSelected= view as android.widget.Button
+    protected  fun buClick(view: View){
+        val buSelected= view as Button
         var cellID=0
         when(buSelected.id){
-            com.hussein.startup.R.id.bu1-> cellID=1
-            com.hussein.startup.R.id.bu2-> cellID=2
-            com.hussein.startup.R.id.bu3-> cellID=3
-            com.hussein.startup.R.id.bu4-> cellID=4
-            com.hussein.startup.R.id.bu5-> cellID=5
-            com.hussein.startup.R.id.bu6-> cellID=6
-            com.hussein.startup.R.id.bu7-> cellID=7
-            com.hussein.startup.R.id.bu8-> cellID=8
-            com.hussein.startup.R.id.bu9-> cellID=9
+             R.id.bu1-> cellID=1
+             R.id.bu2-> cellID=2
+             R.id.bu3-> cellID=3
+             R.id.bu4-> cellID=4
+             R.id.bu5-> cellID=5
+             R.id.bu6-> cellID=6
+             R.id.bu7-> cellID=7
+             R.id.bu8-> cellID=8
+             R.id.bu9-> cellID=9
 
         }
        // Toast.makeText(this,"ID:"+ cellID, Toast.LENGTH_LONG).show()
 
-        myRef.child("PlayerOnline").child(sessionID).child(cellID.toString()).setValue(myEmail)
+        myRef.child("PlayerOnline").child(sessionID!!).child(cellID.toString()).setValue(myEmail)
     }
 
     var player1= java.util.ArrayList<Int>()
@@ -212,7 +212,7 @@ fun PlayerOnline(sessionID:String){
     myRef.child("PlayerOnline").removeValue()
     myRef.child("PlayerOnline").child(sessionID)
             .addValueEventListener(object:ValueEventListener{
-                override fun onDataChange(dataSnapshot: DataSnapshot?) {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
                     try{
                         player1.clear()
                         player2.clear()
@@ -239,7 +239,7 @@ fun PlayerOnline(sessionID:String){
                     }catch (ex:Exception){}
                 }
 
-                override fun onCancelled(p0: DatabaseError?) {
+                override fun onCancelled(p0: DatabaseError) {
 
                 }
 
@@ -254,7 +254,7 @@ fun PlayerOnline(sessionID:String){
         myRef.child("Users").child(SplitString(myEmail!!)).child("Request")
                 .addValueEventListener(object:ValueEventListener{
 
-                    override fun onDataChange(dataSnapshot: DataSnapshot?) {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
 
 
 
@@ -281,7 +281,7 @@ fun PlayerOnline(sessionID:String){
                         }catch (ex:Exception){}
                     }
 
-                     override fun onCancelled(p0: DatabaseError?) {
+                     override fun onCancelled(p0: DatabaseError) {
 
                     }
 
