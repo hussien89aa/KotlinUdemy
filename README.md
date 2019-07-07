@@ -1,4 +1,4 @@
-## Complete source code of 17 Android Apps  that we build in "The complete Android Kotlin Developer course". Enroll today witht [ 95% discount](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
+## Complete source code of 17 Android Apps  that we build in "The complete Android Kotlin Developer course". Enroll using a [ 95% discount coupon](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
 
 ### In this course you will learn how to make online games, and apps for Android, using Kotlin. Bellow is list of open source Apps that we build in tutorial. 
 
