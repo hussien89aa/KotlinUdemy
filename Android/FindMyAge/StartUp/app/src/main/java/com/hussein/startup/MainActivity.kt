@@ -1,9 +1,9 @@
 package com.hussein.startup
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import  kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -15,7 +15,7 @@ open class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /*
-        buGetAge.setOnClickListener( View.OnClickListener {
+        buGetAge.setOnClickListener{
 
 
         }
@@ -34,7 +34,7 @@ open class MainActivity : AppCompatActivity() {
      val year:Int=Calendar.getInstance().get(Calendar.YEAR)
      val myAge=year - userDOB.toInt()
       val avg =  myAge/userDOB.toInt()
-      tvShowAge.text = "Your age is "+ myAge
+      tvShowAge.text = "Your age is $myAge"
  }
 
 }
