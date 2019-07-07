@@ -13,7 +13,7 @@ class myBroadcastReceiver: BroadcastReceiver() {
             var b=intent.extras
            // Toast.makeText(context,b.getString("message"),Toast.LENGTH_LONG).show()
             val notifyMe=Notifications()
-            notifyMe.Notify(context!!,b.getString("message"),10)
+            notifyMe.Notify(context!!, b!!.getString("message")!!,10)
         }
         else if(intent!!.action.equals("android.intent.action.BOOT_COMPLETED")){
 

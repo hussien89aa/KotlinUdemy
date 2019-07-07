@@ -1,9 +1,9 @@
 package com.hussein.startup
 
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import  kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     fun BuSetTime(view:View){
         val popTime= PopTime()
-        val fm=fragmentManager
+        val fm=supportFragmentManager
         popTime.show(fm,"Select time")
 
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     fun SetTime(Hours:Int,Minute:Int){
 
-        tvShowTime.text= Hours.toString() + ":" + Minute.toString()
+        tvShowTime.text= "$Hours:$Minute"
 
         val saveData=SaveData(applicationContext)
         saveData.SaveData(Hours,Minute)
