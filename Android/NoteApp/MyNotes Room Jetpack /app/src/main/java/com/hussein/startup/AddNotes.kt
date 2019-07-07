@@ -44,7 +44,7 @@ class AddNotes : AppCompatActivity() {
 
         }else{
 
-                dbManager!!.NotesDao().update( etTitle.text.toString(),etDes.text.toString(),id)
+                dbManager!!.NotesDao().update( Notes(id,etTitle.text.toString(),etDes.text.toString()))
                 finish()
 
         }

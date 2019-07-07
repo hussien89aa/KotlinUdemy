@@ -26,8 +26,8 @@ interface NotesDao {
     @Delete
     fun delete(note: Notes)
 
-    @Query("update Notes set Title= :Title,Description= :Description  WHERE ID = :ID")
-    fun update(Title: String, Description: String,ID: Int)
+    @Update
+    fun update(note: Notes)
 }
 
 @Database(entities = arrayOf(Notes::class), version = 1)
