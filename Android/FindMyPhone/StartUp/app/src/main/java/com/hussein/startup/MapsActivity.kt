@@ -1,6 +1,6 @@
 package com.hussein.startup
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -20,14 +20,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-        val bundle:Bundle=intent.extras
+        val bundle:Bundle= intent.extras!!
         val phoneNumber =bundle.getString("phoneNumber")
         dDatabaseRef=FirebaseDatabase.getInstance().reference
 
-        dDatabaseRef!!.child("Users").child(phoneNumber)
+        dDatabaseRef!!.child("Users").child(phoneNumber!!)
                 .child("location").addValueEventListener(object:ValueEventListener{
 
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 try{
                     val td= dataSnapshot!!.value as HashMap<String,Any>
@@ -38,7 +38,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     loadMap()
                 }catch (ex:Exception){}
             }
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })

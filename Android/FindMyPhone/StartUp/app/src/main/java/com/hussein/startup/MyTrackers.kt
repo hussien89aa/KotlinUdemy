@@ -1,23 +1,20 @@
 package com.hussein.startup
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 import android.view.*
 import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_my_trackers.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
-import java.util.jar.Manifest
 
 class MyTrackers : AppCompatActivity() {
   var adapter:ContactAdapter?=null
@@ -42,7 +39,7 @@ class MyTrackers : AppCompatActivity() {
            // remove to Realtime database
            val mDatabase = FirebaseDatabase.getInstance().reference
            val userData= UserData(applicationContext)
-           mDatabase.child("Users").child(userInfo.phoneNumber).child("Finders").child(userData.loadPhoneNumber()).removeValue()
+           mDatabase.child("Users").child(userInfo.phoneNumber!!).child("Finders").child(userData.loadPhoneNumber()).removeValue()
 
        }
 
@@ -128,22 +125,22 @@ class MyTrackers : AppCompatActivity() {
 
         when (requestCode){
             PCIK_CODE ->{
-                if (resultCode== Activity.RESULT_OK){
+                if (resultCode== AppCompatActivity.RESULT_OK){
 
                     val contactData=data!!.data
-                    val c= contentResolver.query(contactData,null,null,null,null)
+                    val c= contentResolver.query(contactData!!,null,null,null,null)
 
-                    if (c.moveToFirst()){
+                    if (c!!.moveToFirst()){
 
-                        val id= c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts._ID))
-                        val hasPhone= c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts.HAS_PHONE_NUMBER))
+                        val id= c!!.getString(c!!.getColumnIndexOrThrow(ContactsContract.Contacts._ID))
+                        val hasPhone= c!!.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts.HAS_PHONE_NUMBER))
 
                         if (hasPhone.equals("1")){
                             val phones= contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null
                             , ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + id, null,null)
 
-                            phones.moveToFirst()
-                            var phoneNumber = phones.getString(phones.getColumnIndex("data1"))
+                            phones!!.moveToFirst()
+                            var phoneNumber = phones!!.getString(phones!!.getColumnIndex("data1"))
                             val name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
 
                             phoneNumber=UserData.formatPhoneNumber(phoneNumber)

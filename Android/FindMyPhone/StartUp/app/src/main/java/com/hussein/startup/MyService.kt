@@ -39,7 +39,7 @@ class MyService:Service(){
         val myPhoneNumber=userData.loadPhoneNumber()
         databaseRef!!.child("Users").child(myPhoneNumber).child("request").addValueEventListener(
                 object : ValueEventListener {
-                    override fun onDataChange(p0: DataSnapshot?) {
+                    override fun onDataChange(p0: DataSnapshot) {
 
                         if (MyService.myLocation==null) return
                         // get datatime
@@ -53,7 +53,7 @@ class MyService:Service(){
                                 .child("location").child("lastOnline").setValue( df.format(date).toString())
                     }
 
-                    override fun onCancelled(p0: DatabaseError?) {
+                    override fun onCancelled(p0: DatabaseError) {
 
                     }
                 }

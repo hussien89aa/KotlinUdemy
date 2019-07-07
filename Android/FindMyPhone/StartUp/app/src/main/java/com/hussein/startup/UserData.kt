@@ -22,7 +22,7 @@ class  UserData{
     fun loadPhoneNumber():String{
 
         val phoneNumber =sharedRef!!.getString("phoneNumber","empty")
-        return  phoneNumber
+        return  phoneNumber!!
     }
 
     fun isFirstTimeLoad(){
@@ -65,7 +65,7 @@ class  UserData{
         val listOfTrackers =sharedRef!!.getString("listOfTrackers","empty")
 
         if (!listOfTrackers.equals("empty")){
-            val usersInfo=listOfTrackers.split("%").toTypedArray()
+            val usersInfo=listOfTrackers!!.split("%").toTypedArray()
             var i=0
             while(i<usersInfo.size){
 

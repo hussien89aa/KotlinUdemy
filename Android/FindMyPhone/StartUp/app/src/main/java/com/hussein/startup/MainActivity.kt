@@ -7,10 +7,10 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 import android.view.*
 import android.widget.AdapterView
 import android.widget.BaseAdapter
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             val df =SimpleDateFormat("yyyy/MMM/dd HH:MM:ss")
             val date =Date()
             // save to database
-            databaseRef!!.child("Users").child(userInfo.phoneNumber).child("request").setValue(df.format(date).toString())
+            databaseRef!!.child("Users").child(userInfo.phoneNumber!!).child("request").setValue(df.format(date).toString())
 
             val intent =Intent(applicationContext,MapsActivity::class.java)
             intent.putExtra("phoneNumber",userInfo.phoneNumber)
@@ -76,10 +76,12 @@ class MainActivity : AppCompatActivity() {
 
     fun refreshUsers(){
          val userData= UserData(this)
-        databaseRef!!.child("Users").child(userData.loadPhoneNumber()).child("Finders").addValueEventListener(object :
+        databaseRef!!.child("Users").
+                child(userData.loadPhoneNumber()).
+                child("Finders").addValueEventListener(object :
         ValueEventListener{
 
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
                try {
                    val td = dataSnapshot!!.value as HashMap<String,Any>
 
@@ -106,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                }
             }
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -232,13 +234,13 @@ class MainActivity : AppCompatActivity() {
             listOfContacts.clear()
 
             val cursor=contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null)
-            cursor.moveToFirst()
+            cursor!!.moveToFirst()
             do {
-                val name=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                val name=cursor!!.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
                 val phoneNumber=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
 
                 listOfContacts.put(UserData.formatPhoneNumber(phoneNumber),name)
-            }while (cursor.moveToNext())
+            }while (cursor!!.moveToNext())
         }catch (ex:Exception){}
     }
 
