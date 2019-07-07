@@ -1,7 +1,24 @@
-## Complete source code of 17 Android Apps  that we build in The complete Kotlin Developer course. Enroll today witht [ 95% discount](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
+## Complete source code of 17 Android Apps  that we build in [The complete Android Kotlin Developer course](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). Enroll today witht [ 95% discount](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
 
-### In this course you will learn how to make online games, and apps for Android, like Pokémon , twitter,Tic Tac Toe, and notepad using Kotlin
+### In this course you will learn how to make online games, and apps for Android, using Kotlin. Bellow is list of open source Apps that we build in tutorial. 
 
+- [Find My Age  App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FindMyAge).
+- [Tic Tac Toe Local App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TicTacToy%20Game/TicTacToyLocal).
+- [Calculator App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/Calculator/).
+- [Pokémon Game App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/PockemonAndroid).
+- [Zoo App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/ZooApp/StartUp).
+- [Restaurants App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FoodApp).
+- [Find Sunrise time App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/).
+- [My Notes App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/NoteApp/StartUp).
+- [Tic Tac Toe using Firebase App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TicTacToy%20Game/TicTacToyOnline/TicTacToyLocal).
+- [Facebook App using Firebase](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TwitterDemo/StartUp).
+- [MediaPlayer App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/MediaPlayer/StartUp).
+- [Alaram App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/AlarmManager/StartUp).
+- [Notification Channel App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/NotificationChannelsApp).
+- [Light sensor App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/sensors/light).
+- [Nimbuzz vibrate](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/sensors/numbizz/StartUp).
+- [Find My Phone App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FindMyPhone).
+- [Twitter App using Php + MySQL](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TwitterWebService).
 
 
 ## Course Description
