@@ -3,10 +3,10 @@ package com.hussein.startup
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // LoadURLOnline()
-        CheckUserPermsions()
+         LoadURLOnline()
+         CheckUserPermsions()
 
 
         var mytracking=mySongTrack()
@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun LoadURLOnline(){
-        listSongs.add(SongInfo("001","Ahmed","http://server6.mp3quran.net/thubti/001.mp3"))
-        listSongs.add(SongInfo("002","Ahmed","http://server6.mp3quran.net/thubti/002.mp3"))
-        listSongs.add(SongInfo("003","Alex","http://server6.mp3quran.net/thubti/003.mp3"))
-        listSongs.add(SongInfo("004","Ahmed","http://server6.mp3quran.net/thubti/004.mp3"))
-        listSongs.add(SongInfo("005","Alex","http://server6.mp3quran.net/thubti/005.mp3"))
+        listSongs.add(SongInfo("001","Ahmed","https://server6.mp3quran.net/thubti/001.mp3"))
+        listSongs.add(SongInfo("002","Ahmed","https://server6.mp3quran.net/thubti/002.mp3"))
+        listSongs.add(SongInfo("003","Alex","https://server6.mp3quran.net/thubti/003.mp3"))
+        listSongs.add(SongInfo("004","Ahmed","https://server6.mp3quran.net/thubti/004.mp3"))
+        listSongs.add(SongInfo("005","Alex","https://server6.mp3quran.net/thubti/005.mp3"))
     }
 
     inner  class MySongAdapter:BaseAdapter{
@@ -50,10 +50,10 @@ class MainActivity : AppCompatActivity() {
             myView.tvSongName.text = Song.Title
             myView.tvAuthor.text = Song.AuthorName
 
-            myView.buPlay.setOnClickListener(View.OnClickListener {
+            myView.buPlay.setOnClickListener{
                 //TODO: play song
 
-                if( myView.buPlay.text.equals("Stop") ){
+                if(myView.buPlay.text == "Stop"){
                     mp!!.stop()
                     myView.buPlay.text = "Start"
                 }else {
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                     } catch (ex: Exception) {
                     }
                 }
-            })
+            }
 
             return  myView
 
@@ -89,13 +89,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    inner  class  mySongTrack():Thread(){
+    inner  class  mySongTrack :Thread(){
 
 
           override fun run() {
           while(true){
               try{
-                  Thread.sleep(1000)
+                   sleep(1000)
               }catch (ex:Exception){}
 
               runOnUiThread {
