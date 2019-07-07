@@ -8,17 +8,17 @@ Bellow, list of open source Apps that we build in tutorial
 - [Tic Tac Toe Local App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TicTacToy%20Game/TicTacToyLocal).
 - [Calculator App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/Calculator/).
 - [Pokémon Game App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/PockemonAndroid).
-- [Zoo App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/ZooApp/StartUp).
+- [Zoo App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/ZooApp/).
 - [Restaurants App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FoodApp).
-- [Find Sunrise time App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/).
-- [My Notes App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/NoteApp/StartUp).
+- [Find Sunrise time App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/GetSunSet/).
+- [My Notes App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/NoteApp/).
 - [Tic Tac Toe using Firebase App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TicTacToy%20Game/TicTacToyOnline/TicTacToyLocal).
-- [Facebook App using Firebase](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TwitterDemo/StartUp).
-- [MediaPlayer App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/MediaPlayer/StartUp).
-- [Alaram App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/AlarmManager/StartUp).
+- [Facebook App using Firebase](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TwitterDemo/).
+- [MediaPlayer App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/MediaPlayer/).
+- [Alaram App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/AlarmManager/).
 - [Notification Channel App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/NotificationChannelsApp).
 - [Light sensor App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/sensors/light).
-- [Nimbuzz vibrate](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/sensors/numbizz/StartUp).
+- [Nimbuzz vibrate](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/sensors/numbizz/).
 - [Find My Phone App](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/FindMyPhone).
 - [Twitter App using Php + MySQL](https://github.com/hussien89aa/KotlinUdemy/tree/master/Android/TwitterWebService).
 
