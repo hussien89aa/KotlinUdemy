@@ -1,9 +1,9 @@
 package com.hussein.startup
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import  kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 buClickValue+="."
             }
             buPlusMins.id->{
-                buClickValue= "-"+ buClickValue
+                buClickValue= "-$buClickValue"
             }
         }
         etShowNumber.setText(buClickValue)
