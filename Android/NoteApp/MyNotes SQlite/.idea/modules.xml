@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/StartUp.iml" filepath="$PROJECT_DIR$/.idea/StartUp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MyNotes SQlite.iml" filepath="$PROJECT_DIR$/.idea/MyNotes SQlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/StartUp.iml" filepath="$PROJECT_DIR$/StartUp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/StartUp.iml" filepath="$PROJECT_DIR$/.idea/StartUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
