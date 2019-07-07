@@ -41,7 +41,7 @@ class  DbManager{
         }
 
         override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-            p0!!.execSQL("Drop table IF EXISTS " + dbTable)
+            p0!!.execSQL("Drop table IF EXISTS $dbTable")
         }
 
     }

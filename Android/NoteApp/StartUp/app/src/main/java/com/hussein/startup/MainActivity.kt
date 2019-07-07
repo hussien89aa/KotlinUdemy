@@ -3,19 +3,17 @@ package com.hussein.startup
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.SearchView
 import android.widget.Toast
-import  kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.ticcket.view.*
-import android.view.MenuInflater
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         //listNotes.add(Note(1," meet professor","Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
         //listNotes.add(Note(2," meet doctor","Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
        // listNotes.add(Note(3," meet friend","Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
-
 
 Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
 
@@ -108,14 +105,14 @@ Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
 
           menuInflater.inflate(R.menu.main_menu, menu)
 
-          val sv:SearchView = menu.findItem(R.id.app_bar_search).actionView as SearchView
+          val sv: SearchView = menu.findItem(R.id.app_bar_search).actionView as SearchView
 
           val sm= getSystemService(Context.SEARCH_SERVICE) as SearchManager
           sv.setSearchableInfo(sm.getSearchableInfo(componentName))
           sv.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
               override fun onQueryTextSubmit(query: String): Boolean {
                   Toast.makeText(applicationContext, query, Toast.LENGTH_LONG).show()
-                  LoadQuery("%"+ query +"%")
+                  LoadQuery("%$query%")
                   return false
               }
 
@@ -155,20 +152,21 @@ Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
 
             var myView=layoutInflater.inflate(R.layout.ticcket,null)
+
             var myNote=listNotesAdpater[p0]
             myView.tvTitle.text=myNote.nodeName
             myView.tvDes.text=myNote.nodeDes
-            myView.ivDelete.setOnClickListener( View.OnClickListener {
+            myView.ivDelete.setOnClickListener{
                 var dbManager=DbManager(this.context!!)
                 val selectionArgs= arrayOf(myNote.nodeID.toString())
                 dbManager.Delete("ID=?",selectionArgs)
                 LoadQuery("%")
-            })
-            myView.ivEdit.setOnClickListener( View.OnClickListener{
+            }
+            myView.ivEdit.setOnClickListener{
 
                 GoToUpdate(myNote)
 
-            })
+            }
             return myView
         }
 

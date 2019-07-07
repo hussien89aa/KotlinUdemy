@@ -1,10 +1,10 @@
 package com.hussein.startup
 
 import android.content.ContentValues
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.hussein.startup.R
 import kotlinx.android.synthetic.main.activity_add_notes.*
 
@@ -19,7 +19,7 @@ class AddNotes : AppCompatActivity() {
 
 
        try{
-           var bundle:Bundle=intent.extras
+           var bundle:Bundle= intent.extras!!
            id=bundle.getInt("ID",0)
            if(id!=0) {
                etTitle.setText(bundle.getString("name") )
