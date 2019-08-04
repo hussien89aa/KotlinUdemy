@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".MainActivity" android:background="@color/whitebackground">
+    <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_marginTop="3pt">
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu1" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu2" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu3" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+    </TableRow>
+
+    <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_marginTop="3pt">
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu4" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu5" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu6" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+    </TableRow>
+
+
+
+    <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_marginTop="3pt">
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu7" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu8" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+        <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt" android:id="@+id/bu9" android:layout_marginLeft="3pt"
+                android:background="@color/whileBu" android:onClick="buClick"/>
+    </TableRow>
+
+</TableLayout>

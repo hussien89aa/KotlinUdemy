@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="whitebackground">#D3D3D3</color>
+    <color name="whileBu">#f9f9f9</color>
+    <color name="blue"> #FF33B5E5</color>
+    <color name="darkGreen"> #FF669900 </color>
+</resources>
