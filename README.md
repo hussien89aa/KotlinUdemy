@@ -1,6 +1,6 @@
 # The complete Android Kotlin Developer course 
 
-### In this course you will learn how to make 17 online games, and apps for Android, using Kotlin. Enroll using a [ 95% discount coupon](https://www.udemy.com/the-complete-kotlin-developer-course/?couponCode=UDMEYGITHUB). 
+### In this course you will learn how to make 17 online games, and apps for Android, using Kotlin. Enroll using a [ 95% discount coupon](https://www.udemy.com/course/the-complete-kotlin-developer-course/?referralCode=84CE6EE1EB4176CEDFA0). 
 
 Bellow, list of open source Apps that we build in tutorial
 
