@@ -1,6 +1,6 @@
 # The complete Android Kotlin Developer course 
 
-### In this course you will learn how to make 17 online games, and apps for Android, using Kotlin. Watch FREE on a [ Youtube](https://www.youtube.com/watch?v=ARcZEhuhs5Y&t=105s). 
+### In this course you will learn how to make 17 online games, and apps for Android, using Kotlin. check the videos Tutorial  [here](https://www.youtube.com/watch?v=ARcZEhuhs5Y&t=105s). 
 
 Bellow, list of open source Apps that we build in tutorial
 
